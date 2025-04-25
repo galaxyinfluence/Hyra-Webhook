@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');
 
 const HYRA_TOKEN = process.env.HYRA_TOKEN;
-const WORKSPACE_ID = process.env.WORKSPACE_ID;
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 
 module.exports = async (req, res) => {
@@ -11,7 +10,7 @@ module.exports = async (req, res) => {
   };
 
   try {
-    const response = await fetch(`https://api.hyra.io/activity/sessions/${WORKSPACE_ID}/upcoming`, options);
+    const response = await fetch(`https://api.hyra.io/activity/sessions/680a614f10fb7322a519ab34/upcoming`, options);
     const sessions = await response.json();
 
     const embeds = [];
